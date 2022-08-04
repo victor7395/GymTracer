@@ -8,7 +8,7 @@ const treinoA = {
             weight: 35,
             extraWeight: 2.5,
             rest: 60,
-            obs: '-'
+            obs: ''
         },
         {
             name: 'SUPINO RETO BARRA',

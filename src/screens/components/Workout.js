@@ -9,12 +9,12 @@ export default function Workout({ typeOfWorkout }) {
     const [workoutType, workout] = useWorkout({ typeOfWorkout });
 
     return <>
+        <Text style={styles.title}>{workoutType}</Text>
         <FlatList
             data={workout}
             renderItem={({ item }) => <ExerciseBox {...item} />}
             key={(item) => { workout.name }}
         />
-
     </>
 }
 
@@ -22,7 +22,10 @@ const styles = StyleSheet.create({
     title: {
         textAlign: 'center',
         textTransform: "uppercase",
-        fontSize: 16,
-        fontWeight: 'bold'
+        fontSize: 22,
+        fontWeight: 'bold',
+        paddingVertical: 15,
+        borderRadius: 7,
+        elevation: 5,
     }
 })

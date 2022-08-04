@@ -16,9 +16,10 @@ export default function App() {
         screenOptions={({ route }) => ({
           headerStyle: { backgroundColor:'#E1E1E1'},
           headerTitleAlign: 'center',
-          tabBarIcon: ({ focused, color, size }) => {
+          tabBarIcon: () => {
             return <FontAwesome5 name={'dumbbell'} brand size={18} color='#0A0909' />;
-          }
+          },
+          headerShown: false
         })}
       >
         <Tab.Screen name="Treino A" component={WorkoutRoutes} initialParams={{ routeParam: 'A' }} />

@@ -5,7 +5,7 @@ const treinoC = {
             name: 'agachamento smith',
             series: 3,
             repeat: 10,
-            weight: 0,
+            weight: 15,
             extraWeight: 0,
             rest: 60,
             obs: 'Fazer 1 série de 20 sem peso como aquecimento'
@@ -14,7 +14,7 @@ const treinoC = {
             name: 'leg press 45°',
             series: 3,
             repeat: 12,
-            weight: 0,
+            weight: 60,
             extraWeight: 0,
             rest: 60,
             obs: '-'
@@ -23,8 +23,8 @@ const treinoC = {
             name: 'cadeira extensora',
             series: 3,
             repeat: 12,
-            weight: 0,
-            extraWeight: 0,
+            weight: 35,
+            extraWeight: 2.5,
             rest: 60,
             obs: '-'
         },
@@ -32,8 +32,8 @@ const treinoC = {
             name: 'cadeira flexora',
             series: 3,
             repeat: 12,
-            weight: 0,
-            extraWeight: 0,
+            weight: 35,
+            extraWeight: 2.5,
             rest: 60,
             obs: '-'
         },
@@ -50,7 +50,7 @@ const treinoC = {
             name: 'elevação pélvica máquina',
             series: 3,
             repeat: 15,
-            weight: 0,
+            weight: 40,
             extraWeight: 0,
             rest: 60,
             obs: '-'
@@ -59,7 +59,7 @@ const treinoC = {
             name: 'gêmeos em pé',
             series: 4,
             repeat: 15,
-            weight: 0,
+            weight: 40,
             extraWeight: 0,
             rest: 60,
             obs: '-'

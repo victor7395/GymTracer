@@ -20,7 +20,6 @@ export default function useWorkout({ typeOfWorkout }) {
         
         setWorkoutType(data.workoutType);
         setWorkout(data.workout);
-        console.log(data);
     }, [{ typeOfWorkout }]);
 
     return [workoutType, workout];
