@@ -8,14 +8,14 @@ export default function useWorkout({ typeOfWorkout }) {
     let data = [];
 
     useEffect(() => {
-        if (typeOfWorkout == 'A') {
+        if (typeOfWorkout == 'Treino A') {
             data = loadTreinoA();
-        } else if (typeOfWorkout == 'B') {
+        } else if (typeOfWorkout == 'Treino B') {
             data = loadTreinoB();
-        } else if (typeOfWorkout == 'C'){
+        } else if (typeOfWorkout == 'Treino C'){
             data = loadTreinoC();
         }else {
-            console.log('pane no sitema');
+            //console.log('pane no sitema');
         }
         
         setWorkoutType(data.workoutType);

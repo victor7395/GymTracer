@@ -11,6 +11,7 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\victo\
 MERGED from [:react-native-vector-icons] D:\Development\GymTracer\GymTracer\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] D:\Development\GymTracer\GymTracer\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] D:\Development\GymTracer\GymTracer\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-sqlite-storage] D:\Development\GymTracer\GymTracer\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.69.3] C:\Users\victo\.gradle\caches\transforms-3\cfd0a9924feac1a2a4ffd6e99ab7cc0d\transformed\jetified-react-native-0.69.3-debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\victo\.gradle\caches\transforms-3\3b08b05d095aecca6b9a932f37321fd9\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.webkit:android-jsc:r250230] C:\Users\victo\.gradle\caches\transforms-3\8d2a6f202e056d77debe3b0f1946991e\transformed\jetified-android-jsc-r250230\AndroidManifest.xml:2:1-11:12
@@ -181,6 +182,8 @@ MERGED from [:react-native-safe-area-context] D:\Development\GymTracer\GymTracer
 MERGED from [:react-native-safe-area-context] D:\Development\GymTracer\GymTracer\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] D:\Development\GymTracer\GymTracer\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] D:\Development\GymTracer\GymTracer\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-sqlite-storage] D:\Development\GymTracer\GymTracer\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-sqlite-storage] D:\Development\GymTracer\GymTracer\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.69.3] C:\Users\victo\.gradle\caches\transforms-3\cfd0a9924feac1a2a4ffd6e99ab7cc0d\transformed\jetified-react-native-0.69.3-debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.69.3] C:\Users\victo\.gradle\caches\transforms-3\cfd0a9924feac1a2a4ffd6e99ab7cc0d\transformed\jetified-react-native-0.69.3-debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\victo\.gradle\caches\transforms-3\3b08b05d095aecca6b9a932f37321fd9\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
