@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useContext } from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { ExerciseContext } from "../../contexts/ExerciseContext";
+import Toast from 'react-native-toast-message';
 
 export default function ExerciseBox({
     id,
@@ -34,7 +35,17 @@ export default function ExerciseBox({
         navigation.navigate('Edit Workout');
     }
 
-    return <TouchableOpacity onLongPress={() => navigateToEdit()}>
+    function showInfo() {
+        Toast.show({
+            type: 'showEditInfo',
+            text2: 'Segure para editar',
+            position: 'bottom',
+            autoHide: true,
+            visibilityTime: 1300
+          });
+    }
+
+    return <TouchableOpacity onLongPress={() => navigateToEdit()} onPress={() => showInfo()} >
         <View style={styles.box}>
             <Text style={styles.exercise}>{name}</Text>
             <View style={styles.column}>

@@ -5,6 +5,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { WorkoutContext } from "../../contexts/WorkoutContext";
 import { useNavigation } from "@react-navigation/native";
 import { ExerciseContext } from "../../contexts/ExerciseContext";
+import Toast from 'react-native-toast-message';
 
 export default function Workout() {
     const { selectedWorkout } = useContext(WorkoutContext);
@@ -19,6 +20,22 @@ export default function Workout() {
     function navigateToAdd() {
         setSelectedExercise({});
         navigation.navigate('Edit Workout');
+    }
+
+    function navigateBack() {
+        showInfo();
+        navigation.goBack();
+    }
+
+    function showInfo() {
+        Toast.show({
+            type: 'showInfo',
+            text1: 'Informação',
+            text2: 'Segure o treino para editar',
+            position: 'bottom',
+            autoHide: true,
+            visibilityTime: 5000
+          });
     }
 
     return <View>
@@ -48,7 +65,7 @@ export default function Workout() {
             <View style={styles.buttomContainer}>
                 <TouchableOpacity
                     style={styles.buttomBack}
-                    onPress={() => { navigation.goBack() }
+                    onPress={() => { navigateBack() }
                     }
                 >
                     <FontAwesome5 name={'long-arrow-alt-left'} size={26} color='white' style={styles.icons} />

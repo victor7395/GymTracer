@@ -5,6 +5,7 @@ import WorkoutItem from "../screens/components/WorkoutItem";
 import { Dimensions, FlatList, Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { GeneralContext } from "../contexts/GeneralContext";
 import { WorkoutContext } from "../contexts/WorkoutContext";
+import Toast from 'react-native-toast-message';
 
 export default function AppRoutes() {
     const [workouts, setWorkouts] = useState([]);
@@ -15,6 +16,7 @@ export default function AppRoutes() {
         setTimeout(() => {
             getAllWorkouts();
         }, 500);
+        showInfo();
     }, []);
 
     async function getAllWorkouts() {
@@ -63,6 +65,17 @@ export default function AppRoutes() {
         } else {
             newWorkout();
         }
+    }
+
+    function showInfo() {
+        Toast.show({
+            type: 'showInfo',
+            text1: 'Informação',
+            text2: 'Segure o treino para editar',
+            position: 'bottom',
+            autoHide: true,
+            visibilityTime: 5000
+          });
     }
 
     return <View style={styles.viewContainer}>

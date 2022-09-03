@@ -1,0 +1,4 @@
+#Sat Sep 03 15:26:31 BRT 2022
+base.0=D\:\\Development\\GymTracer\\GymTracer\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
