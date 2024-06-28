@@ -1,5 +1,5 @@
 const treinoB = {
-    workoutType: 'Treino B',
+    workoutName: 'Treino B',
     workout: [
         {
             name: 'puxada alta aberta frente',
@@ -8,7 +8,8 @@ const treinoB = {
             weight: 40,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 2
         },
         {
             name: 'puxada alta triangulo',
@@ -17,7 +18,8 @@ const treinoB = {
             weight: 40,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 2
         },
         {
             name: 'remada articulada neutra',
@@ -26,7 +28,8 @@ const treinoB = {
             weight: 15,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 2
         },
         {
             name: 'remada máquina aberta',
@@ -35,7 +38,8 @@ const treinoB = {
             weight: 33,
             extraWeight: 5,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 2
         },
         {
             name: 'encolhimento halteres simultâneo',
@@ -44,7 +48,8 @@ const treinoB = {
             weight: 12,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 2
         },
         {
             name: 'rosca direta barra "w"',
@@ -53,7 +58,8 @@ const treinoB = {
             weight: 15,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 2
         },
         {
             name: 'rosca scott halteres combinado',
@@ -62,7 +68,8 @@ const treinoB = {
             weight: 12,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 2
         },
         {
             name: 'rosca martelo alternado',
@@ -71,7 +78,8 @@ const treinoB = {
             weight: 6,
             extraWeight: 0,
             rest: 60,
-            obs: 'Alternado'
+            obs: 'Alternado',
+            workoutId: 2
         }
     ],
 }

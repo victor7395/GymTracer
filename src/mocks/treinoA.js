@@ -1,5 +1,5 @@
 const treinoA = {
-    workoutType: 'Treino A',
+    workoutName: 'Treino A',
     workout: [
         {
             name: 'Crucifixo Máquina',
@@ -8,7 +8,8 @@ const treinoA = {
             weight: 35,
             extraWeight: 2.5,
             rest: 60,
-            obs: ''
+            obs: '',
+            workoutId: 1
         },
         {
             name: 'SUPINO RETO BARRA',
@@ -17,7 +18,8 @@ const treinoA = {
             weight: 10,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 1
         },
         {
             name: 'SUPINO INCLINADO ARTICULADO',
@@ -26,7 +28,8 @@ const treinoA = {
             weight: 10,
             extraWeight: 0,
             rest: 60,
-            obs: 'REST PAUSE NA ÚLTIMA SÉRIE'
+            obs: 'REST PAUSE NA ÚLTIMA SÉRIE',
+            workoutId: 1
         },
         {
             name: 'desenvolvimento articulado',
@@ -35,7 +38,8 @@ const treinoA = {
             weight: 12,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 1
         },
         {
             name: 'ELEVAÇÃO LATERAL',
@@ -44,7 +48,8 @@ const treinoA = {
             weight: 6,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 1
         },
         {
             name: 'ELEVAÇÃO FRONTAL PRONADA ALTERNADO',
@@ -53,7 +58,8 @@ const treinoA = {
             weight: 6,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 1
         },
         {
             name: 'TRÍCEPS TESTA BARRA "W"',
@@ -62,7 +68,8 @@ const treinoA = {
             weight: 10,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 1
         },
         {
             name: 'TRÍCEPS POLIA BARRA "V"',
@@ -71,7 +78,8 @@ const treinoA = {
             weight: 17,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 1
         }
     ],
 }

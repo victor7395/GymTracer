@@ -1,11 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useContext, useEffect, useState } from "react";
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Dimensions, Image } from "react-native";
 import { ExerciseContext } from "../../contexts/ExerciseContext";
 import { WorkoutContext } from "../../contexts/WorkoutContext";
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 export default function EditWorkout() {
     const { selectedWorkout } = useContext(WorkoutContext);
+    const [imageUri, setImageUri] = useState(null);
+
     const {
         selectedExercise,
         setSelectedExercise,
@@ -21,6 +24,7 @@ export default function EditWorkout() {
         actualExerciseExtraWeight,
         actualExerciseRest,
         actualExerciseObs,
+        actualPhoto,
         setActualExerciseName,
         setActualExerciseSeries,
         setActualExerciseRepeat,
@@ -28,10 +32,10 @@ export default function EditWorkout() {
         setActualExerciseExtraWeight,
         setActualExerciseRest,
         setActualExerciseObs,
+        setActualPhoto,
         populateActualExercise,
         cleanActualExercise
     } = useContext(ExerciseContext);
-
 
     useEffect(() => {
         populateScreen();
@@ -40,9 +44,9 @@ export default function EditWorkout() {
     function populateScreen() {
         if (selectedExercise) {
             populateActualExercise();
+            console.log(actualPhoto  + " actual footootootooto");
         } else {
             cleanScreen();
-            console.log('ué');
         }
     }
 
@@ -60,6 +64,7 @@ export default function EditWorkout() {
                 extraWeight: actualExerciseExtraWeight,
                 rest: actualExerciseRest,
                 obs: actualExerciseObs,
+                photo: actualPhoto
             };
             try {
                 modifyExercise(newExerciseToEdit);
@@ -76,7 +81,8 @@ export default function EditWorkout() {
                 extraWeight: actualExerciseExtraWeight,
                 rest: actualExerciseRest,
                 obs: actualExerciseObs,
-                workoutId: selectedWorkout.id
+                workoutId: selectedWorkout.id,
+                photo: actualPhoto
             };
             try {
                 addExercise(newExerciseToAdd);
@@ -105,6 +111,24 @@ export default function EditWorkout() {
         cleanActualExercise();
         setSelectedExercise({});
     }
+    
+    const takePicture = async () => {
+        launchCamera({ mediaType: 'photo', includeBase64: true }, (response) => {
+            if (response.assets && response.assets.length > 0) {
+                setActualPhoto(response.assets[0].base64);
+                setImageUri(response.assets[0].uri);
+            }
+          });
+      };
+
+      const takeFromGalery = async () => {
+        launchImageLibrary({ mediaType: 'photo', includeBase64: true }, (response) => {
+            if (response.assets && response.assets.length > 0) {
+                setActualPhoto(response.assets[0].base64);
+                setImageUri(response.assets[0].uri);
+            }
+          });
+      };
 
     return <View style={styles.box}>
         <Text style={styles.line}>Exercício:</Text>
@@ -125,8 +149,32 @@ export default function EditWorkout() {
                 <TextInput style={styles.lineInput} keyboardType={'decimal-pad'} onChangeText={(extraWeight) => { setActualExerciseExtraWeight(extraWeight) }} >{actualExerciseExtraWeight}</TextInput>
             </View>
         </View>
-        <Text style={styles.line}>Obs:</Text>
-        <TextInput style={styles.lineInputLarge} multiline maxLength={45} textBreakStrategy={'simple'} numberOfLines={2} value={actualExerciseObs} onChangeText={(obs) => { setActualExerciseObs(obs) }} />
+        <View>
+            <Text style={styles.line}>Obs:</Text>
+            <TextInput style={styles.lineInputLarge} multiline maxLength={45} textBreakStrategy={'simple'} numberOfLines={2} value={actualExerciseObs} onChangeText={(obs) => { setActualExerciseObs(obs) }} />
+        </View>
+        
+        <View style={styles.buttomPhoto}>
+            <TouchableOpacity 
+                style={styles.buttomDark}
+                onPress={() => {
+                    takePicture()
+                    }}>
+                <Text style={styles.buttomTextWhite}>Foto</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+                style={styles.buttomDark}
+                onPress={() => {
+                    takeFromGalery()
+                    }}>
+                <Text style={styles.buttomTextWhite}>Galeria</Text>
+            </TouchableOpacity>
+        </View>
+        <Image
+            source={{ uri: `data:image/jpeg;base64,${actualPhoto}` }}
+            style={styles.photo}
+        />
+
         <View style={styles.buttonsContainer}>
             <TouchableOpacity
                 style={styles.buttomDark}
@@ -159,6 +207,9 @@ const stylesFunction = () =>
         },
         row2: {
             flex: 1,
+        },
+        row3: {
+            marginEnd: 15,
         },
         line: {
             color: 'white',
@@ -236,5 +287,17 @@ const stylesFunction = () =>
             alignSelf: 'center',
             backgroundColor: '#E03E1E',
             justifyContent: 'center'
+        },
+        buttomPhoto:{
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+            marginTop: 15,
+        },
+        photo: {
+            width: 350,
+            height: 350,
+            textAlign: 'center',
+            alignSelf: 'center',
+            margin: 10,
         },
     });

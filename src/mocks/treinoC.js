@@ -1,5 +1,5 @@
 const treinoC = {
-    workoutType: 'Treino C',
+    workoutName: 'Treino C',
     workout: [
         {
             name: 'agachamento smith',
@@ -8,7 +8,8 @@ const treinoC = {
             weight: 15,
             extraWeight: 0,
             rest: 60,
-            obs: 'Fazer 1 série de 20 sem peso como aquecimento'
+            obs: 'Fazer 1 série de 20 sem peso como aquecimento',
+            workoutId: 3
         },
         {
             name: 'leg press 45°',
@@ -17,7 +18,8 @@ const treinoC = {
             weight: 60,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 3
         },
         {
             name: 'cadeira extensora',
@@ -26,7 +28,8 @@ const treinoC = {
             weight: 35,
             extraWeight: 2.5,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 3
         },
         {
             name: 'cadeira flexora',
@@ -35,7 +38,8 @@ const treinoC = {
             weight: 35,
             extraWeight: 2.5,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 3
         },
         {
             name: 'flexora unilateral máquina',
@@ -44,7 +48,8 @@ const treinoC = {
             weight: 0,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 3
         },
         {
             name: 'elevação pélvica máquina',
@@ -53,7 +58,8 @@ const treinoC = {
             weight: 40,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 3
         },
         {
             name: 'gêmeos em pé',
@@ -62,7 +68,8 @@ const treinoC = {
             weight: 40,
             extraWeight: 0,
             rest: 60,
-            obs: '-'
+            obs: '-',
+            workoutId: 3
         }
     ],
 }

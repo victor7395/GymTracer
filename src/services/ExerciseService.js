@@ -17,6 +17,20 @@ export function createTableExercise() {
             "workoutId INTEGER " +
             ");"
         );
+        console.info("Tabela Exercise Criada");
+    });
+}
+
+//Alteração feita para feature/1 de inclusão de foto
+export async function alterTableExercise(){
+    db.transaction((transaction) => {
+        transaction.executeSql("" +
+            "ALTER TABLE " +
+            "Exercise " +
+            "ADD COLUMN " +
+            "photo TEXT"
+        );
+        console.info("Tabela Exercise Modificada");
     });
 }
 
@@ -32,11 +46,12 @@ export async function newExercise(exercise) {
                 "extraWeight, " +
                 "rest, " +
                 "obs, " +
-                "workoutId " +
+                "workoutId, " +
+                "photo " +
                 ") " +
                 "VALUES " +
-                "(?, ?, ?, ?, ?, ?, ?, ?);",
-                [exercise.name, exercise.series, exercise.repeat, exercise.weight, exercise.extraWeight, exercise.rest, exercise.obs, exercise.workoutId],
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?);",
+                [exercise.name, exercise.series, exercise.repeat, exercise.weight, exercise.extraWeight, exercise.rest, exercise.obs, exercise.workoutId, exercise.photo],
                 () => {
                     resolve("Exercicio adicionado com sucesso.");
                     console.log("Exercicio adicionado com sucesso.");
@@ -59,10 +74,11 @@ export async function editExercise(exercise) {
                 "weight = ?, " +
                 "extraWeight = ?, " +
                 "rest = ?, " +
-                "obs = ? " +
+                "obs = ?, " +
+                "photo = ? " +
                 "WHERE " +
                 "id = ?;",
-                [exercise.name, exercise.series, exercise.repeat, exercise.weight, exercise.extraWeight, exercise.rest, exercise.obs, exercise.id],
+                [exercise.name, exercise.series, exercise.repeat, exercise.weight, exercise.extraWeight, exercise.rest, exercise.obs, exercise.photo, exercise.id ],
                 () => {
                     resolve("Exercicio atualizado com sucesso.");
                     console.log("Exercicio atualizado com sucesso.");

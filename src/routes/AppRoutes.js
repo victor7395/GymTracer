@@ -11,14 +11,17 @@ export default function AppRoutes() {
     const [workouts, setWorkouts] = useState([]);
     const { workoutModalVisible, setWorkoutModalVisible } = useContext(GeneralContext);
     const { selectedWorkout, setSelectedWorkout, actualWorkoutName, setActualWorkoutName, addWorkout, alterWorkout, deleteWorkout } = useContext(WorkoutContext);
-
-    useEffect(() => {
+    
+    useEffect(() => {        
         setTimeout(() => {
             getAllWorkouts();
         }, 500);
+
+        
+
         showInfo();
     }, []);
-
+    
     async function getAllWorkouts() {
         const workoutData = await getWorkout();
         setWorkouts(workoutData);
