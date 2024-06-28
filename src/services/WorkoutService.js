@@ -87,7 +87,6 @@ export async function getWorkout() {
                         temp.push(resultado.rows.item(i));
                     }
                     resolve(temp);
-                    console.log("Selected");
                 }, (error) => {
                     console.log("Erro ao procurar 'Workout'");
                     console.error(error);

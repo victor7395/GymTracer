@@ -8,18 +8,22 @@ export default function useWorkout({ typeOfWorkout }) {
     let data = [];
 
     useEffect(() => {
-        if (typeOfWorkout == 'Treino A') {
-            data = loadTreinoA();
-        } else if (typeOfWorkout == 'Treino B') {
-            data = loadTreinoB();
-        } else if (typeOfWorkout == 'Treino C'){
-            data = loadTreinoC();
-        }else {
-            //console.log('pane no sitema');
+        try {            
+            if (typeOfWorkout == 'Treino A') {
+                data = loadTreinoA();
+            } else if (typeOfWorkout == 'Treino B') {
+                data = loadTreinoB();
+            } else if (typeOfWorkout == 'Treino C'){
+                data = loadTreinoC();
+            }else {
+                //console.log('pane no sitema');
+            }            
+            setWorkoutType(data.workoutType);
+            setWorkout(data.workout);
+        } catch (error) {
+            console.log('Erro ao carregar dados mockados: ' + error.message);
         }
-        
-        setWorkoutType(data.workoutType);
-        setWorkout(data.workout);
+
     }, [{ typeOfWorkout }]);
 
     return [workoutType, workout];

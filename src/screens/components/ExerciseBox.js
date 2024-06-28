@@ -1,8 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { ExerciseContext } from "../../contexts/ExerciseContext";
 import Toast from 'react-native-toast-message';
+import CheckBox from "@react-native-community/checkbox";
 
 export default function ExerciseBox({
     id,
@@ -12,13 +13,15 @@ export default function ExerciseBox({
     weight,
     extraWeight,
     rest,
-    obs
+    obs,
+    photo
 }) {
 
     let hasExtraWeight = extraWeight > 0;
     const styles = stylesFunction();
     const navigation = useNavigation();
     const { setSelectedExercise, selectedExercise, populateActualExercise } = useContext(ExerciseContext);
+    const [isSelected, setSelection] = useState(false);
 
     function navigateToEdit() {
         setSelectedExercise({
@@ -29,7 +32,8 @@ export default function ExerciseBox({
             weight,
             extraWeight,
             rest,
-            obs
+            obs,
+            photo
         });
         populateActualExercise();
         navigation.navigate('Edit Workout');
@@ -49,14 +53,22 @@ export default function ExerciseBox({
         <View style={styles.box}>
             <Text style={styles.exercise}>{name}</Text>
             <View style={styles.column}>
+                <View style={styles.row0}>
+                        <Text style={styles.line}>Série: {series}</Text>
+                        {hasExtraWeight && <Text style={styles.line}>Carga: {weight} + {extraWeight}</Text>}
+                        {!hasExtraWeight && <Text style={styles.line}>Carga: {weight}</Text>}
+                </View>
                 <View style={styles.row1}>
-                    <Text style={styles.line}>Série: {series}</Text>
-                    {hasExtraWeight && <Text style={styles.line}>Carga: {weight} + {extraWeight}</Text>}
-                    {!hasExtraWeight && <Text style={styles.line}>Carga: {weight}</Text>}
+                        <Text style={styles.line}>Repetições: {repeat}</Text>
+                        <Text style={styles.line}>Descanso: {rest} segundos</Text>
                 </View>
                 <View style={styles.row2}>
-                    <Text style={styles.line}>Repetições: {repeat}</Text>
-                    <Text style={styles.line}>Descanso: {rest} segundos</Text>
+                    <CheckBox 
+                        value={isSelected}
+                        onValueChange={setSelection}
+                        style={styles.checkBox}
+                        tintColors={{ true: '#071A28', false: '#071A28' }}
+                    />
                 </View>
             </View>
             <Text style={styles.line}>Obs: {obs ? obs : "-"}</Text>
@@ -76,11 +88,15 @@ const stylesFunction = () =>
         column: {
             flexDirection: 'row'
         },
-        row1: {
+        row0: {
             flex: 1,
         },
-        row2: {
+        row1: {
             flex: 2,
+        },
+        row2: {
+            flex: 3,
+            maxWidth: '10%',
         },
         line: {
             color: 'white',
@@ -96,5 +112,5 @@ const stylesFunction = () =>
             paddingVertical: 8,
             elevation: 5,
             borderRadius: 3,
-        }
+        },
     });

@@ -16,6 +16,7 @@ export function ExerciseProvider({ children }) {
     const [actualExerciseExtraWeight, setActualExerciseExtraWeight] = useState();
     const [actualExerciseRest, setActualExerciseRest] = useState();
     const [actualExerciseObs, setActualExerciseObs] = useState();
+    const [actualPhoto, setActualPhoto] = useState();
 
     async function addExercise(newExerciseToAdd) {
         await newExercise(newExerciseToAdd);
@@ -43,6 +44,7 @@ export function ExerciseProvider({ children }) {
         setActualExerciseExtraWeight(selectedExercise.extraWeight);
         setActualExerciseRest(selectedExercise.rest);
         setActualExerciseObs(selectedExercise.obs);
+        setActualPhoto(selectedExercise.photo);
     }
 
     function cleanActualExercise() {
@@ -54,6 +56,7 @@ export function ExerciseProvider({ children }) {
         setActualExerciseExtraWeight('');
         setActualExerciseRest('');
         setActualExerciseObs('');
+        setActualPhoto('');
     }
 
     return (
@@ -76,6 +79,7 @@ export function ExerciseProvider({ children }) {
                 actualExerciseExtraWeight,
                 actualExerciseRest,
                 actualExerciseObs,
+                actualPhoto,
                 setActualExerciseName,
                 setActualExerciseSeries,
                 setActualExerciseRepeat,
@@ -83,6 +87,7 @@ export function ExerciseProvider({ children }) {
                 setActualExerciseExtraWeight,
                 setActualExerciseRest,
                 setActualExerciseObs,
+                setActualPhoto,
 
                 populateActualExercise,
                 cleanActualExercise,
